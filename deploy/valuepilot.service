@@ -1,0 +1,14 @@
+[Unit]
+Description=ValuePilot AI Flask API
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/opt/valuepilot
+ExecStart=/opt/venv/bin/python3 /opt/valuepilot/app.py
+Restart=always
+RestartSec=3
+Environment=FLASK_ENV=production
+
+[Install]
+WantedBy=multi-user.target
